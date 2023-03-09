@@ -5,7 +5,8 @@ class WidgetsScreen extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Scaffold(appBar: AppBar(title: Text("Stateless")), body: body());
+    return Scaffold(
+        appBar: AppBar(title: const Text("Stateless")), body: body());
   }
 
   Widget body() {
