@@ -1,4 +1,4 @@
-name: lesson_05_stateful
+name: lesson06_buttons
 description: A new Flutter project.
 publish_to: 'none'
 version: 0.1.0
@@ -17,7 +17,3 @@ dev_dependencies:
 
 flutter:
   uses-material-design: true
-  fonts:
-    - family: prism
-      fonts:
-        - asset: assets/fonts/tilt_prism_regular.ttf

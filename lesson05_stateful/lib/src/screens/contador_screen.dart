@@ -27,7 +27,7 @@ class _ContadorScreenState extends State<ContadorScreen> {
         children: [
           const Text(
             "Cantidad de clicks realizados:",
-            style: TextStyle(fontSize: 20),
+            style: TextStyle(fontSize: 20, fontFamily: 'prism'),
           ),
           const SizedBox(height: 10),
           Text("$contador",
