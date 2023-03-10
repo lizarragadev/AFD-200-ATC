@@ -7,7 +7,7 @@ class TresScreen extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: const Text('Pagina Tres'),
+        title: const Text('Página Tres'),
         backgroundColor: Colors.yellow,
       ),
       body: Center(
