@@ -15,7 +15,7 @@ class MyApp extends StatelessWidget {
       routes: {
         '1': (context) => const UnoScreen(),
         '2': (context) => const DosScreen(),
-        '3': (context) => const TresScreen(),
+        '3': (context) => TresScreen(valor: "Por defecto"),
       },
     );
   }

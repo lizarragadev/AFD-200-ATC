@@ -1,7 +1,8 @@
 import 'package:flutter/material.dart';
 
 class TresScreen extends StatelessWidget {
-  const TresScreen({Key? key}) : super(key: key);
+  String valor;
+  TresScreen({Key? key, required this.valor}) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
@@ -15,6 +16,7 @@ class TresScreen extends StatelessWidget {
         mainAxisAlignment: MainAxisAlignment.center,
         children: [
           const Text("Pagina 3"),
+          Text(valor),
           const SizedBox(height: 20),
           ElevatedButton(
             onPressed: () {
