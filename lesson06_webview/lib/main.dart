@@ -2,38 +2,53 @@ import 'package:flutter/material.dart';
 import 'package:webview_flutter/webview_flutter.dart';
 
 void main() {
-  runApp(const MainApp());
+  runApp(const MaterialApp(
+    debugShowCheckedModeBanner: false,
+    home: WebViewApp(),
+  ));
 }
 
-class MainApp extends StatelessWidget {
-  const MainApp({super.key});
+class WebViewApp extends StatefulWidget {
+  const WebViewApp({super.key});
 
   @override
-  Widget build(BuildContext context) {
-    return const MaterialApp(
-      home: MyWebView(),
-    );
-  }
+  State<WebViewApp> createState() => _WebViewAppState();
 }
 
-class MyWebView extends StatelessWidget {
-  const MyWebView({Key? key}) : super(key: key);
+class _WebViewAppState extends State<WebViewApp> {
+  late final WebViewController controller;
+  String url = 'https://twitter.com';
+
+  @override
+  void initState() {
+    controller = WebViewController()
+      ..setJavaScriptMode(JavaScriptMode.unrestricted)
+      ..setNavigationDelegate(
+        NavigationDelegate(
+          onProgress: (int progress) {
+            print('Progreso de carga WebView (progress : $progress%)');
+          },
+          onNavigationRequest: (navigation) {
+            if (navigation.url != url) {
+              return NavigationDecision.prevent;
+            }
+            return NavigationDecision.navigate;
+          },
+        ),
+      )
+      ..loadRequest(Uri.parse(url));
+
+    super.initState();
+  }
 
   @override
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: Text('My Browser'),
+        title: const Text('WebView'),
       ),
-      body: WebView(
-        initialUrl: "https://fluter.dev",
-        javascriptMode: JavascriptMode.unrestricted,
-        onProgress: (int progress) {
-          print("WebView is loading (progress : $progress%)");
-        },
-        onwebResourceError: (WebResourceError error) {
-          print(error.description);
-        },
+      body: WebViewWidget(
+        controller: controller,
       ),
     );
   }
