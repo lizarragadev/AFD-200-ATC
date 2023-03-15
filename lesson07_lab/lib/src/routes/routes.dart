@@ -4,6 +4,7 @@ import 'package:lesson07_lab/src/screens/data_tables_screen.dart';
 import 'package:lesson07_lab/src/screens/drawers_screen.dart';
 import 'package:lesson07_lab/src/screens/home_screen.dart';
 import 'package:lesson07_lab/src/screens/listview_listiles_screen.dart';
+import 'package:lesson07_lab/src/screens/selectable_text_screen.dart';
 import 'package:lesson07_lab/src/screens/stacks_screen.dart';
 import 'package:lesson07_lab/src/screens/tab_bars_screen.dart';
 
@@ -13,9 +14,9 @@ Map<String, WidgetBuilder> getRoutes() {
     '/bottomNav': (context) => const BottomNavBarScreen(),
     '/tabs': (context) => const TabBarsScreen(),
     '/drawers': (context) => const DrawersScreen(),
-    '/listview': (context) => const ListViewListilesScreen(),
-    '/dataTable': (context) => const DataTablesScreen(),
-    '/selectableText': (context) => const DataTablesScreen(),
+    '/listview': (context) => const ListviewListilesScreen(),
+    '/dataTable': (context) => DataTablesScreen(),
+    '/selectableText': (context) => const SelectableTextScreen(),
     '/stack': (context) => const StacksScreen()
   };
 }
