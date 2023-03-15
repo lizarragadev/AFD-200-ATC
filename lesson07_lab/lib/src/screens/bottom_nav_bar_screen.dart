@@ -77,21 +77,6 @@ class _BottomNavBarScreenState extends State<BottomNavBarScreen> {
             )));
   }
 
-  /** 
-    
-   BottomNavigationBar(
-        currentIndex: selectedPage,
-        items: itemsBNB(),
-        onTap: (position) {
-          setState(() {
-            selectedPage = position;
-            selectionTab(position);
-          });
-        },
-      ),
-
-  */
-
   List<BottomNavigationBarItem> itemsBNB() {
     List<BottomNavigationBarItem> lista = [];
     lista.add(
